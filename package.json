@@ -1,7 +1,6 @@
 {
   "name": "26092023_1452_epnts",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +17,7 @@
     "eslint": "^8.50.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.2.2"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
