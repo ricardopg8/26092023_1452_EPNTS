@@ -1,19 +1,18 @@
 import { Router } from 'express';
 import {StatusCodes} from 'http-status-codes';
 
+import { CidadesController } from '../../controllers';
+
 
 const router = Router();
 
 
     router.get('/', (_, res) => {
-        return res.send('Olá, DEV!');
+        return res.send('Funcinoando, sem altenticações!');
 } ); 
 
 
-    router.post('/Teste', (req, res) => {
-        console.log(req.body); // Aqui no console pode ser utilizado body ou header e muitos outros parametros ex.: token, numerico, params, cookies, query(usa interrogação), etc.
-        return res.status(StatusCodes.ACCEPTED).json(req.body); // Aqui no retorno do JSon pode ser usado o método json ou send
-} ); 
+    router.post('/cidades', CidadesController.create ); 
 
 
 export { router }
