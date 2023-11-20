@@ -3,6 +3,11 @@ import { StatusCodes } from "http-status-codes";
 import * as yup from 'yup';
 import { Cidade } from "./Cidade";
 
+// interface ICidade {
+//     Nome: string;
+//     Estado: string;
+// }
+
 const bodyValidation: yup.Schema<Cidade> = yup.object().shape({
     Nome: yup.string().required().min(3),
     Estado: yup.string().required().min(3),
@@ -23,7 +28,6 @@ export const create = async (req: Request<{}, {}, Cidade>, res: Response) => {
             errors[error.path] = error.message;
         });
 
-
         return res.status(StatusCodes.BAD_REQUEST).json({
             errors
         });
@@ -38,6 +42,5 @@ console.log(validatedData);
     // console.log(req.body.Nome);
     // console.log(req.body.Estado)
 
-    
     return res.send('Create!');
 };
